@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
 
 
@@ -14,7 +16,6 @@ def main():
         while True:
             new_address = rpc_connection.getnewaddress()
             print(f"Yeni adres: {new_address}")
-
             amount_received = rpc_connection.getreceivedbyaddress(new_address)
             if amount_received <= 1:
                 print(f"Adrese henüz hiçbir miktar gönderilmedi.")
