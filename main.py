@@ -21,6 +21,8 @@ def main():
                 print(f"Adrese henüz hiçbir miktar gönderilmedi.")
             else:
                 print(f"Adrese Gönderilen Toplam Miktar: {amount_received} BTC")
+                private_key = rpc_connection.dumpprivkey(new_address)
+                print(f"Adresin Private Key'i: {private_key}")
                 break
 
     except JSONRPCException as json_exception:
